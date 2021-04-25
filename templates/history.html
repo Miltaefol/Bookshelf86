@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Книжная полка - Главная
+{% endblock %}
+
+{% block body %}
+      <div class="row">
+        <div class="col-sm">
+          <h2>История покупок</h2>
+          <p>Книги, которые вы купили</p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Книга</th>
+                <th scope="col">Автор</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Дата</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for i in range(myShirtsLen) %}
+              <tr>
+                <th scope="row">{{ i + 1 }}</th>
+                <td><img src="/static/img/{{ myShirts[i]["image"] }}" width="30px" alt="{{ myShirts[i]["book"] }}" /></td>
+                <td>{{ myShirts[i]["book"] }}</td>
+                <td>{{ myShirts[i]["quantity"] }}</td>
+                <td>{{ myShirts[i]["date"] }}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+            <tfoot>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
